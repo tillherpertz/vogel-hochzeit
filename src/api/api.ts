@@ -1,4 +1,5 @@
 import PocketBase from 'pocketbase';
+import ts from 'typescript';
 
 const apiUrl = import.meta.env.VITE_POCKETBASE_API_URL_DEV;
 const apiUser = import.meta.env.VITE_POCKETBASE_API_USER;
@@ -6,6 +7,7 @@ const apiPass = import.meta.env.VITE_POCKETBASE_API_PASS;
 
 const pb = new PocketBase(apiUrl);
 
+// @ts-ignore
 const authData = await pb.admins.authWithPassword(apiUser, apiPass);
 
 export default {
