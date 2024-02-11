@@ -1,6 +1,6 @@
 import PocketBase from 'pocketbase';
 
-const apiUrl = import.meta.env.VITE_POCKETBASE_API_URL_DEV;
+const apiUrl = import.meta.env.VITE_POCKETBASE_API_URL;
 const apiUser = import.meta.env.VITE_POCKETBASE_API_USER;
 const apiPass = import.meta.env.VITE_POCKETBASE_API_PASS;
 
