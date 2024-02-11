@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-import Background from "@/components/background/Background.vue";
-import Logo from "@/components/logo/Logo.vue";
+import Background from "@/components/background/Background";
+import Logo from "@/components/logo/Logo";
 
-import { useStore } from "@/utils/store.ts";
+// import { useStore } from "@/utils/store.ts";
 import api from "@/api/api.ts";
 
 export default {
