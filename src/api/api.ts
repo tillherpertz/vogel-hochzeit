@@ -1,5 +1,4 @@
 import PocketBase from 'pocketbase';
-import ts from 'typescript';
 
 const apiUrl = import.meta.env.VITE_POCKETBASE_API_URL_DEV;
 const apiUser = import.meta.env.VITE_POCKETBASE_API_USER;
