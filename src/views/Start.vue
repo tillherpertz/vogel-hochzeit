@@ -7,7 +7,7 @@
       <div class="start-date">07.06.2024</div>
     </div>
   </template>
-  <h3>{{ this.placeholder }}</h3>
+  <h3>{{ placeholder }}</h3>
 </template>
 
 <script lang="ts">
