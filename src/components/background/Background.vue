@@ -3,7 +3,11 @@
   <div class="background"></div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+export default {
+  name: "Background",
+};
+</script>
 
 <style scoped>
 .overlay {
