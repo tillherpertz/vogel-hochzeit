@@ -24,13 +24,12 @@ export default {
     Background,
   },
   data() {
-    const store = useStore();
     return {
       placeholder: "",
     };
   },
   async mounted() {
-    const store = useStore();
+    // const store = useStore();
     const data = await api.getHome();
     this.placeholder = data[0].text;
   },
