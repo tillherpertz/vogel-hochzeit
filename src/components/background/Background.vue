@@ -73,18 +73,29 @@ export default {
         position: absolute;
         top: -60px;
         left: -80px;
-        width: 90%;
+        width: 350px;
         height: auto;
         transform: rotate(75deg);
+        opacity: 0.5;
+
+
+        @media screen and (min-width: 768px) {
+            width: 20%;
+        }
     }
 
     .wreath-bottom {
         position: absolute;
         bottom: -100px;
         right: -120px;
-        width: 130%;
+        width: 500px;
         height: auto;
         transform: rotate(30deg);
+        opacity: 0.5;
+
+        @media screen and (min-width: 768px) {
+            width: 35%;
+        }
     }
 }
 </style>

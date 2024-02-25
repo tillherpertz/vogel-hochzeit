@@ -1,33 +1,37 @@
 <template>
     <Background bgColor="#fff" opacity="0.05" />
-    <Header />
-    <div class="information-panel">
-        <div class="section-wrapper">
-            <h1>Informationen</h1>
-            <h2>07.06.2024</h2>
-        </div>
-        <div class="section-wrapper">
-            <h1>Standesamt</h1>
-            <h2>11:00 Uhr</h2>
-            <h3>Ladenburg 68526</h3>
-            <h3>Hauptstraße 7</h3>
-        </div>
-        <div class="section-wrapper">
-            <h1>Sekt Empfang</h1>
-            <h2>14:00 Uhr</h2>
-            <h3>Jäck’s Scheuerboden</h3>
-            <h3>Aussiedlerhof 7a</h3>
-            <h3>69198 Schriesheim</h3>
-        </div>
-        <div class="section-wrapper">
-            <h1>Freie Trauung</h1>
-            <h2>15:00 Uhr</h2>
-            <h3>Jäck’s Scheuerboden</h3>
-        </div>
-        <div class="section-wrapper">
-            <h1>Abendessen / Feier</h1>
-            <h2>ca. 18:00 Uhr</h2>
-            <h3>Jäck’s Scheuerboden</h3>
+    <div class="header-wrap">
+        <Header />
+    </div>
+    <div class="content-wrap">
+        <div class="information-panel">
+            <div class="section-wrapper">
+                <h1>Informationen</h1>
+                <h2>07.06.2024</h2>
+            </div>
+            <div class="section-wrapper">
+                <h1>Standesamt</h1>
+                <h2>11:00 Uhr</h2>
+                <h3>Ladenburg 68526</h3>
+                <h3>Hauptstraße 7</h3>
+            </div>
+            <div class="section-wrapper">
+                <h1>Sekt Empfang</h1>
+                <h2>14:00 Uhr</h2>
+                <h3>Jäck’s Scheuerboden</h3>
+                <h3>Aussiedlerhof 7a</h3>
+                <h3>69198 Schriesheim</h3>
+            </div>
+            <div class="section-wrapper">
+                <h1>Freie Trauung</h1>
+                <h2>15:00 Uhr</h2>
+                <h3>Jäck’s Scheuerboden</h3>
+            </div>
+            <div class="section-wrapper">
+                <h1>Abendessen / Feier</h1>
+                <h2>ca. 18:00 Uhr</h2>
+                <h3>Jäck’s Scheuerboden</h3>
+            </div>
         </div>
     </div>
 </template>
@@ -49,10 +53,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.information-panel {
-    height: 70vh;
-    overflow: scroll;
+.header-wrap {
+    width: 100%;
+    height: 7em;
+    display: flex;
+    justify-content: center;
+    top: 0;
 }
+
+.content-wrap {}
+
+.information-panel {}
 
 .section-wrapper {
     margin-bottom: 1em;
