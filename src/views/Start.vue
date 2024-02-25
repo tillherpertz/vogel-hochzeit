@@ -7,8 +7,7 @@
             <div class="start-date">07.06.2024</div>
         </div>
         <router-link to="/overview">
-            weiter
-            <!-- <button class="continue">Weiter</button> -->
+            <button class="continue">Weiter</button>
         </router-link>
     </template>
     <!-- <h3>{{ placeholder }}</h3> -->
@@ -43,6 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .start-content {
+    overflow: hidden;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -86,16 +86,14 @@ h3 {
 }
 
 button.continue {
-    position: absolute;
-    bottom: 6em;
     margin-top: 4em;
-    height: 2.5em;
+    height: 2em;
     color: #7f4828;
-    font-size: 1.5em;
+    font-size: 1.25em;
     border-radius: 2em;
     text-align: center;
     border: none;
-    width: 15em;
+    width: 12em;
     cursor: pointer;
 
     &:hover {
