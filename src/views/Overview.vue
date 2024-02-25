@@ -50,7 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 .information-panel {
-    margin-top: 8em;
     height: 70vh;
     overflow: scroll;
 }

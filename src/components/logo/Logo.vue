@@ -30,7 +30,7 @@ export default {
 
 <style scoped>
 .logo {
-    position: fixed;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
