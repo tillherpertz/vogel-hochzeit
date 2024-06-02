@@ -19,5 +19,23 @@ export default {
         } catch (e) {
             throw e;
         }
+    },
+    async getPictureCollections() {
+        try {
+            const result = await pb.collection('pictureCollections').getFullList({
+                sort: '+created',
+            });
+            return result;
+        } catch (e) {
+            throw e;
+        }
+    },
+    async uploadPictureCollection(data: any) {
+        try {
+            const result = await pb.collection('pictureCollections').create(data);
+            return result;
+        } catch (e) {
+            throw e;
+        }
     }
 }
