@@ -26,7 +26,10 @@ export default {
     },
     emits: ['close'],
     props: {
-        onClick: Function,
+        onClose: {
+            type: Function,
+            required: true,
+        },
     },
     data() {
         return {};

@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <PictureUploadButton @click="toggleModal" v-if="!showUploadModal" />
+    <PictureUploadButton @click="toggleModal()" v-if="!showUploadModal" />
 </template>
 
 <script lang="ts">
@@ -53,6 +53,7 @@ export default {
     },
     methods: {
         toggleModal() {
+            console.log("toggle modal");
             this.showUploadModal = !this.showUploadModal;
         },
     },

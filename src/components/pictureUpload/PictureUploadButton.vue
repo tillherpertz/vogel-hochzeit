@@ -1,16 +1,19 @@
 <template>
     <div class="picture-upload-button">
-        <button>Fotos hochladen</button>
+        <button @click="onClick">Fotos hochladen</button>
     </div>
 </template>
 
 <script lang="ts">
-
+import { PropType } from "vue";
 export default {
     name: "PictureUploadButton",
     components: {},
     props: {
-        onClick: Function,
+        onClick: {
+            type: Function as PropType<(event: MouseEvent) => void>,
+            required: true,
+        },
     },
     data() {
         return {};
