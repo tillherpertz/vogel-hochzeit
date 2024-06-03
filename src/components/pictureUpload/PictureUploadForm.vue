@@ -4,16 +4,29 @@
             <div @click="$emit('close')" class="form-close-button">
                 <i class="bi-x-lg"></i>
             </div>
-            <h1>Fotos hochladen</h1>
-            <form id="pictureCollectionForm" @submit.prevent="submitData">
+            <form v-if="notUploaded" id="pictureCollectionForm" @submit.prevent="submitData">
+                <h1>Fotos hochladen</h1>
                 <label for="title">Name des Albums</label>
                 <input type="text" name="title" id="title" />
                 <label for="file">Dateien auswählen</label>
                 <input type="file" name="file" id="file" multiple />
                 <button class="picture-upload-button" type="submit">Hochladen</button>
             </form>
+            <div v-else>
+                <div v-if="success" class="alert">
+                    <h1>Erfolgreich hochgeladen</h1>
+                    <button class="picture-upload-button" @click="$router.go()">Zurück zur Übersicht</button>
+                </div>
+                <div v-if="error">
+                    <h1>Fehler beim Hochladen</h1>
+                    <RouterLink to="/fotos/">
+                        <button class="picture-upload-button" @click="$router.go()">Zurück zur Übersicht</button>
+                    </RouterLink>
+                </div>
+            </div>
         </div>
     </div>
+
 </template>
 <script lang="ts">
 import PictureUploadButton from './PictureUploadButton.vue';
@@ -32,7 +45,11 @@ export default {
         },
     },
     data() {
-        return {};
+        return {
+            success: false,
+            error: false,
+            notUploaded: true,
+        };
     },
     methods: {
         submitData() {
@@ -58,7 +75,14 @@ export default {
                 return;
             }
 
-            api.uploadPictureCollection(formData);
+            try {
+                api.uploadPictureCollection(formData);
+                this.notUploaded = false;
+                this.success = true;
+            } catch (error) {
+                console.error(error);
+                this.error = true;
+            }
         },
     },
 };
@@ -131,5 +155,20 @@ h1 {
             border-radius: 5px;
         }
     }
+}
+
+.alert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    button {}
 }
 </style>

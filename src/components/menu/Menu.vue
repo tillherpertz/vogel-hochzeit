@@ -42,7 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .menu-icon {
-    position: fixed;
+    position: absolute;
     top: 2em;
     right: 2em;
     z-index: 1000;

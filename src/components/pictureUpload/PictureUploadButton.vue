@@ -24,7 +24,8 @@ export default {
 
 <style lang="scss" scoped>
 .picture-upload-button {
-    position: absolute;
+    z-index: 2000;
+    position: fixed;
     display: flex;
     justify-content: center;
     bottom: 1em;
