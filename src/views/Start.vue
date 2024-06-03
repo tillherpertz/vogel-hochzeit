@@ -6,7 +6,7 @@
             <div class="start-names">Julia & Till</div>
             <div class="start-date">07.06.2024</div>
         </div>
-        <router-link to="/overview">
+        <router-link to="/infos">
             <button class="continue">Weiter</button>
         </router-link>
     </template>

@@ -1,4 +1,5 @@
 <template>
+    <Menu />
     <!-- @vue-ignore -->
     <PictureUploadForm v-if="showUploadModal" @close="toggleModal" />
     <Background bgColor="#fff" opacity="0.05" />
@@ -13,7 +14,9 @@
         </div>
         <div class="thumbnail-collections">
             <div v-for="collection in pictureCollections" :key="collection.id">
-                <CollectionThumbnail :collection="collection" />
+                <RouterLink :to="'/fotos/' + collection.name">
+                    <CollectionThumbnail :collection="collection" />
+                </RouterLink>
             </div>
         </div>
     </div>
@@ -27,6 +30,7 @@ import Background from "@/components/background/Background.vue";
 import CollectionThumbnail from "@/components/collectionThumbnail/CollectionThumbnail.vue";
 import PictureUploadForm from "@/components/pictureUpload/PictureUploadForm.vue";
 import PictureUploadButton from "@/components/pictureUpload/PictureUploadButton.vue";
+import Menu from "@/components/menu/Menu.vue";
 import api from "@/api/api";
 
 export default {
@@ -37,6 +41,7 @@ export default {
         CollectionThumbnail,
         PictureUploadForm,
         PictureUploadButton,
+        Menu,
     },
     data() {
         return {
@@ -46,7 +51,6 @@ export default {
     },
     async mounted() {
         const pictureCollections = await api.getPictureCollections();
-        console.log(pictureCollections);
         this.pictureCollections = pictureCollections;
     },
     methods: {
@@ -75,15 +79,13 @@ export default {
     }
 }
 
-.information-panel {}
-
 .section-wrapper {
     margin-bottom: 1em;
     text-align: center;
 }
 
 h1 {
-    color: #f8d0b6;
+    color: #804828;
 }
 
 h2 {

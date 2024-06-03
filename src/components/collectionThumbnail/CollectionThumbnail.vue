@@ -1,7 +1,7 @@
 <template>
     <div class="thumbnail">
         <div class="thumb-wrap">
-            <h1>{{ collection.name }}</h1>
+            <h1>{{ shortenedCollectionName }}</h1>
             <img :src="linkCreator(firstPicture)" alt="picture" width= />
         </div>
     </div>
@@ -18,9 +18,9 @@ export default {
         },
     },
     data() {
-        console.log(this.collection);
         return {
             firstPicture: this.collection.pictures[0],
+            shortenedCollectionName: this.collection.name.substring(0, 15),
         };
     },
     methods: {

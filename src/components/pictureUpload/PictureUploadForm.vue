@@ -49,12 +49,6 @@ export default {
                 }
             }
 
-            // Debug: Log FormData entries
-            // console.log('FormData entries:');
-            // for (let pair of formData.entries()) {
-            //     console.log(pair[0] + ':', pair[1]);
-            // }
-
             // i need a check if pictures or title are empty
             if (formData.get('name') === '' || formData.get('pictures') === null) {
                 alert('Bitte füllen Sie alle Felder aus');
@@ -69,8 +63,8 @@ export default {
 <style lang="scss" scoped>
 .form-close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1em;
+    right: 1em;
     font-size: 2em;
     color: #7f4828;
     cursor: pointer;
@@ -88,7 +82,7 @@ h1 {
     height: 100vh;
     display: flex;
     position: fixed;
-    z-index: 2;
+    z-index: 1001;
 
     .form-wrapper {
         display: flex;

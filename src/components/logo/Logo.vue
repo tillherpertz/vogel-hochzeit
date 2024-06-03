@@ -1,8 +1,10 @@
 <template>
-    <div class="logo" :class="{ start: isStart }">
-        <span class="upper-logo" :class="{ start: isStart }" :style="{ color: colorTop }">Vogel</span>
-        <span class="lower-logo" :class="{ start: isStart }" :style="{ color: colorBottom }">Hochzeit</span>
-    </div>
+    <RouterLink to="/infos">
+        <div class="logo" :class="{ start: isStart }">
+            <span class="upper-logo" :class="{ start: isStart }" :style="{ color: colorTop }">Vogel</span>
+            <span class="lower-logo" :class="{ start: isStart }" :style="{ color: colorBottom }">Hochzeit</span>
+        </div>
+    </RouterLink>
 </template>
 
 <script lang="ts">
@@ -34,7 +36,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 23em;
+    width: 14em;
     height: 7em;
     margin-top: 1em;
 
@@ -49,7 +51,7 @@ export default {
     font-style: normal;
     position: absolute;
     font-size: 1.5em;
-    left: 130px;
+    left: 70px;
 
     &.start {
         font-size: 3em;

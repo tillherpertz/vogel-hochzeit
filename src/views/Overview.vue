@@ -1,5 +1,6 @@
 <template>
     <Background bgColor="#fff" opacity="0.05" />
+    <Menu />
     <div class="header-wrap">
         <Header />
     </div>
@@ -39,12 +40,14 @@
 <script lang="ts">
 import Header from "@/components/header/Header.vue";
 import Background from "@/components/background/Background.vue";
+import Menu from "@/components/menu/Menu.vue";
 
 export default {
     name: "Overview",
     components: {
         Header,
         Background,
+        Menu,
     },
     data() {
         return {};
@@ -60,10 +63,6 @@ export default {
     justify-content: center;
     top: 0;
 }
-
-.content-wrap {}
-
-.information-panel {}
 
 .section-wrapper {
     margin-bottom: 1em;
