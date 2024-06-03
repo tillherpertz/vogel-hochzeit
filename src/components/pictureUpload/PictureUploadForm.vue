@@ -12,8 +12,6 @@
                 <input type="file" name="file" id="file" multiple />
                 <button class="picture-upload-button" type="submit">Hochladen</button>
             </form>
-            <!-- @vue-ignore -->
-            <!-- <PictureUploadButton @click="submitData()" /> -->
         </div>
     </div>
 </template>
@@ -26,7 +24,9 @@ export default {
     components: {
         PictureUploadButton,
     },
+    emits: ['close'],
     props: {
+        onClick: Function,
     },
     data() {
         return {};
@@ -51,7 +51,7 @@ export default {
 
             // i need a check if pictures or title are empty
             if (formData.get('name') === '' || formData.get('pictures') === null) {
-                alert('Bitte füllen Sie alle Felder aus');
+                alert('Bitte füll alle Felder aus');
                 return;
             }
 

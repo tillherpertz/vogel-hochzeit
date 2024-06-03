@@ -1,6 +1,5 @@
 <template>
     <Menu />
-    <!-- @vue-ignore -->
     <PictureUploadForm v-if="showUploadModal" @close="toggleModal" />
     <Background bgColor="#fff" opacity="0.05" />
     <div class="header-wrap">
@@ -20,8 +19,7 @@
             </div>
         </div>
     </div>
-    <!-- @vue-ignore -->
-    <PictureUploadButton @click="toggleModal()" v-if="!showUploadModal" />
+    <PictureUploadButton @click="toggleModal" v-if="!showUploadModal" />
 </template>
 
 <script lang="ts">

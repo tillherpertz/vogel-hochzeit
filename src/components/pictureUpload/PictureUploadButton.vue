@@ -10,7 +10,7 @@ export default {
     name: "PictureUploadButton",
     components: {},
     props: {
-
+        onClick: Function,
     },
     data() {
         return {};
