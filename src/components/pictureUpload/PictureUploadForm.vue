@@ -15,12 +15,12 @@
             <div v-else>
                 <div v-if="success" class="alert">
                     <h1>Erfolgreich hochgeladen</h1>
-                    <button class="picture-upload-button" @click="$router.go()">Zurück zur Übersicht</button>
+                    <button class="picture-upload-button" @click="reloadPage">Zurück zur Übersicht</button>
                 </div>
                 <div v-if="error">
                     <h1>Fehler beim Hochladen</h1>
                     <RouterLink to="/fotos/">
-                        <button class="picture-upload-button" @click="$router.go()">Zurück zur Übersicht</button>
+                        <button class="picture-upload-button" @click="reloadPage">Zurück zur Übersicht</button>
                     </RouterLink>
                 </div>
             </div>
@@ -83,6 +83,9 @@ export default {
                 console.error(error);
                 this.error = true;
             }
+        },
+        reloadPage() {
+            location.reload();
         },
     },
 };
@@ -168,7 +171,5 @@ h1 {
         justify-content: center;
         text-decoration: none;
     }
-
-    button {}
 }
 </style>
