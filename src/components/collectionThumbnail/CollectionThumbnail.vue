@@ -59,8 +59,8 @@ export default {
     }
 
     img {
-        width: 100%;
-        height: auto;
+        width: auto;
+        height: 100%;
         opacity: 0.5;
     }
 }
