@@ -52,7 +52,7 @@ export default {
         };
     },
     methods: {
-        submitData() {
+        async submitData() {
             const formData = new FormData() as any;
             const formElement = document.getElementById('pictureCollectionForm') as HTMLFormElement;
 
@@ -70,13 +70,16 @@ export default {
             }
 
             // i need a check if pictures or title are empty
-            if (formData.get('name') === '' || formData.get('pictures') === null) {
+
+            console.log(formData.get('name'));
+
+            if (formData.get('name') === '' || formData.get('name') === null || formData.get('pictures') === null || formData.get('pictures') === '') {
                 alert('Bitte füll alle Felder aus');
                 return;
             }
 
             try {
-                api.uploadPictureCollection(formData);
+                await api.uploadPictureCollection(formData);
                 this.notUploaded = false;
                 this.success = true;
             } catch (error) {
