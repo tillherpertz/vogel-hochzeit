@@ -1,7 +1,7 @@
 <template>
     <div class="thumbnail">
         <div class="thumb-wrap">
-            <h1>{{ shortenedCollectionName }}</h1>
+            <h1 :style="'font-size:'">{{ shortenedCollectionName }}</h1>
             <img :src="linkCreator(firstPicture)" alt="picture" width= />
         </div>
     </div>
@@ -20,7 +20,7 @@ export default {
     data() {
         return {
             firstPicture: this.collection.pictures[0],
-            shortenedCollectionName: this.collection.name.substring(0, 15),
+            shortenedCollectionName: this.collection.name.substring(0, 20) + "..."
         };
     },
     methods: {
@@ -50,19 +50,20 @@ export default {
 
     h1 {
         position: absolute;
-        color: #804828;
+        color: #000000;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 1.5em;
+        font-size: 16px;
         z-index: 1;
+        text-align: center;
     }
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }
 </style>
