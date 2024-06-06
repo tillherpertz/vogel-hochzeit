@@ -46,11 +46,12 @@ export default {
         position: relative;
         overflow: hidden;
         border: 1px solid #804828;
+        background-color: #000000bd;
     }
 
     h1 {
         position: absolute;
-        color: #000000;
+        color: #ffffff;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
