@@ -4,7 +4,10 @@
             <div @click="$emit('close')" class="form-close-button">
                 <i class="bi-x-lg"></i>
             </div>
-            <form v-if="notUploaded" id="pictureCollectionForm" @submit.prevent="submitData">
+            <div v-if="uploading">
+                <h1>Wird hochgeladen...</h1>
+            </div>
+            <form v-else-if="notUploaded" id="pictureCollectionForm" @submit.prevent="submitData">
                 <h1>Fotos hochladen</h1>
                 <label for="title">Name des Albums</label>
                 <input type="text" name="title" id="title" />
@@ -49,6 +52,7 @@ export default {
             success: false,
             error: false,
             notUploaded: true,
+            uploading: false,
         };
     },
     methods: {
@@ -79,9 +83,11 @@ export default {
             }
 
             try {
+                this.uploading = true;
                 await api.uploadPictureCollection(formData);
                 this.notUploaded = false;
                 this.success = true;
+                this.uploading = false;
             } catch (error) {
                 console.error(error);
                 this.error = true;
