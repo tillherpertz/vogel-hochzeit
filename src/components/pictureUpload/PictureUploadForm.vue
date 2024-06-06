@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         async submitData() {
-            const formData = new FormData() as any;
+            const formData = new FormData();
             const formElement = document.getElementById('pictureCollectionForm') as HTMLFormElement;
 
             const titleInput = formElement.querySelector('input[name="title"]') as HTMLInputElement;
@@ -69,11 +69,11 @@ export default {
                 }
             }
 
-            // i need a check if pictures or title are empty
+            // Validate form data
+            const title = formData.get('name');
+            const pictures = formData.getAll('pictures');
 
-            console.log(formData.get('name'));
-
-            if (formData.get('name') === '' || formData.get('name') === null || formData.get('pictures') === null || formData.get('pictures') === '') {
+            if (!title || pictures.length === 0) {
                 alert('Bitte füll alle Felder aus');
                 return;
             }

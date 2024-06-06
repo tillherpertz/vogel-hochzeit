@@ -33,6 +33,7 @@ export default {
     async uploadPictureCollection(data: any) {
         try {
             const result = await pb.collection('pictureCollections').create(data);
+            console.log(result);
             return result;
         } catch (e) {
             throw e;
